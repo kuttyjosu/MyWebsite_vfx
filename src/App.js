@@ -92,7 +92,7 @@ export default function Portfolio() {
   }, []);
 
   // Close mobile menu on scroll
-  useEffect(() => { if (menuOpen) setMenuOpen(false); }, [scrollY, menuOpen]);
+  useEffect(() => { if (menuOpen) setMenuOpen(false); }, [scrollY]);
 
   const scrollTo = (id) => {
     document.getElementById(id.toLowerCase())?.scrollIntoView({ behavior: "smooth" });
@@ -181,7 +181,7 @@ export default function Portfolio() {
       </nav>
 
       {/* HERO */}
-      <section id="hero" style={{ position: "relative", height: "100vh", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden" }}>
+      <section id="hero" style={{ position: "relative", height: "100vh", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden", paddingTop: "60px", paddingBottom: "100px" }}>
         <div style={{ position: "absolute", inset: 0 }}>
           <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 80% 60% at 50% 30%, rgba(196,154,60,0.07) 0%, transparent 70%)" }} />
           <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 60% 40% at 20% 80%, rgba(139,111,212,0.05) 0%, transparent 60%)" }} />
@@ -194,7 +194,7 @@ export default function Portfolio() {
 
         <div style={{ textAlign: "center", position: "relative", zIndex: 2, maxWidth: 900, padding: "0 24px" }}>
           {/* Profile photo with hover effect */}
-          <div style={{ animation: "fadeUp 1s ease 0.1s both", marginBottom: 8 }}>
+          <div style={{ animation: "fadeUp 1s ease 0.1s both", marginBottom: 8, paddingTop: 24 }}>
             <div style={{ position: "relative", display: "inline-block" }}>
               <img src="/profile.jpg" alt="Josukutty Francis"
                 onMouseEnter={() => setPhotoHover(true)}
