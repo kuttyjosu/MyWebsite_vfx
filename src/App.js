@@ -468,7 +468,6 @@ function SkillCard({ skill, index }) {
       onMouseLeave={e => e.currentTarget.style.borderColor = "rgba(255,255,255,0.04)"}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 20 }}>
         <span style={{ fontSize: 13, fontWeight: 400, color: "rgba(232,228,220,0.75)" }}>{skill.name}</span>
-        <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 20, fontWeight: 300, color }}>{skill.level}%</span>
       </div>
       <div className="skill-bar" style={{ marginBottom: 20 }}>
         <div className="skill-fill" style={{ width: visible ? `${skill.level}%` : "0%", background: `linear-gradient(90deg, ${color}60, ${color})` }} />
