@@ -92,7 +92,7 @@ export default function Portfolio() {
   }, []);
 
   // Close mobile menu on scroll
-  useEffect(() => { if (menuOpen) setMenuOpen(false); }, [scrollY]);
+  useEffect(() => { if (menuOpen) setMenuOpen(false); }, [scrollY, menuOpen]);
 
   const scrollTo = (id) => {
     document.getElementById(id.toLowerCase())?.scrollIntoView({ behavior: "smooth" });
