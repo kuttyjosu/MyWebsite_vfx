@@ -76,9 +76,7 @@ export default function Portfolio() {
   const [photoHover, setPhotoHover] = useState(false);
 
   useEffect(() => {
-    // Browser tab title
     document.title = "Josukutty Francis · VFX Lighting Lead";
-    // Meta description
     let meta = document.querySelector('meta[name="description"]');
     if (!meta) { meta = document.createElement("meta"); meta.name = "description"; document.head.appendChild(meta); }
     meta.content = "Josukutty Francis — VFX Lighting Lead with 16+ years experience at MPC, MRX, Zebu FX. Specialist in Houdini, Katana, Arnold, USD/Solaris. Available worldwide for feature film and episodic productions.";
@@ -90,7 +88,6 @@ export default function Portfolio() {
     return () => window.removeEventListener("mousemove", move);
   }, []);
 
-  // Close mobile menu on scroll
   useEffect(() => { if (menuOpen) setMenuOpen(false); }, [scrollY, menuOpen]);
 
   const scrollTo = (id) => {
@@ -141,7 +138,6 @@ export default function Portfolio() {
           nav { padding: 16px 20px !important; }
           footer { padding: 16px 20px !important; flex-direction: column; align-items: flex-start; gap: 8px; }
           .footer-links { display: none !important; }
-          .timeline-container { padding-left: 0 !important; }
         }
         @media (min-width: 769px) {
           .hamburger { display: none !important; }
@@ -150,7 +146,6 @@ export default function Portfolio() {
 
       <div className="cursor-glow" style={{ left: cursorPos.x, top: cursorPos.y }} />
 
-      {/* MOBILE MENU OVERLAY */}
       {menuOpen && (
         <div className="mobile-menu-overlay" style={{ position: "fixed", inset: 0, zIndex: 200, background: "rgba(5,5,7,0.97)", backdropFilter: "blur(20px)", display: "flex", flexDirection: "column", alignItems: "center", justifyContent: "center", gap: 40 }}>
           <button onClick={() => setMenuOpen(false)} style={{ position: "absolute", top: 20, right: 20, background: "none", border: "none", color: "rgba(232,228,220,0.5)", fontSize: 28, cursor: "pointer" }}>✕</button>
@@ -161,17 +156,14 @@ export default function Portfolio() {
         </div>
       )}
 
-      {/* NAV */}
       <nav style={{ position: "fixed", top: 0, left: 0, right: 0, zIndex: 100, padding: "20px 48px", background: scrollY > 60 ? "rgba(5,5,7,0.88)" : "transparent", backdropFilter: scrollY > 60 ? "blur(16px)" : "none", borderBottom: scrollY > 60 ? "1px solid rgba(255,255,255,0.04)" : "none", transition: "all 0.4s ease", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
         <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
           <div style={{ width: 6, height: 6, borderRadius: "50%", background: "#C49A3C", boxShadow: "0 0 8px #C49A3C" }} />
           <span onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })} style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 16, fontWeight: 300, letterSpacing: "0.12em", color: "rgba(232,228,220,0.8)", cursor: "pointer" }}>JOSUKUTTY FRANCIS</span>
         </div>
-        {/* Desktop nav */}
         <div className="desktop-nav" style={{ display: "flex", gap: 36 }}>
           {NAV_LINKS.map(l => <span key={l} className="nav-link" onClick={() => scrollTo(l)}>{l}</span>)}
         </div>
-        {/* Hamburger */}
         <button className="hamburger" onClick={() => setMenuOpen(true)} style={{ background: "none", border: "1px solid rgba(255,255,255,0.1)", borderRadius: 4, padding: "8px 10px", cursor: "pointer", display: "flex", flexDirection: "column", gap: 4 }}>
           <div style={{ width: 20, height: 1.5, background: "rgba(232,228,220,0.6)", borderRadius: 2 }} />
           <div style={{ width: 20, height: 1.5, background: "rgba(232,228,220,0.6)", borderRadius: 2 }} />
@@ -179,7 +171,6 @@ export default function Portfolio() {
         </button>
       </nav>
 
-      {/* HERO */}
       <section id="hero" style={{ position: "relative", minHeight: "100vh", display: "flex", alignItems: "center", justifyContent: "center", overflow: "hidden", paddingTop: "100px", paddingBottom: "100px" }}>
         <div style={{ position: "absolute", inset: 0 }}>
           <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 80% 60% at 50% 30%, rgba(196,154,60,0.07) 0%, transparent 70%)" }} />
@@ -192,19 +183,16 @@ export default function Portfolio() {
         ))}
 
         <div style={{ textAlign: "center", position: "relative", zIndex: 2, maxWidth: 900, padding: "0 24px" }}>
-          {/* Profile photo with hover effect */}
           <div style={{ animation: "fadeUp 1s ease 0.1s both", marginBottom: 8 }}>
             <div style={{ position: "relative", display: "inline-block" }}>
               <img src="/profile.jpg" alt="Josukutty Francis"
                 onMouseEnter={() => setPhotoHover(true)}
                 onMouseLeave={() => setPhotoHover(false)}
                 style={{ width: 110, height: 110, borderRadius: "50%", objectFit: "cover", objectPosition: "top", border: `2px solid ${photoHover ? "rgba(196,154,60,0.8)" : "rgba(196,154,60,0.4)"}`, boxShadow: photoHover ? "0 0 40px rgba(196,154,60,0.35), 0 0 80px rgba(196,154,60,0.1)" : "0 0 20px rgba(196,154,60,0.15)", marginBottom: 8, transition: "all 0.4s ease", transform: photoHover ? "scale(1.05)" : "scale(1)", cursor: "pointer" }} />
-              {/* Open to work green dot */}
               <div style={{ position: "absolute", bottom: 10, right: 2, width: 14, height: 14, borderRadius: "50%", background: "#22C55E", border: "2px solid #050507", boxShadow: "0 0 8px #22C55E" }}>
                 <div style={{ width: "100%", height: "100%", borderRadius: "50%", background: "#22C55E", animation: "pulseGreen 1.5s ease-in-out infinite" }} />
               </div>
             </div>
-            {/* Open to work label */}
           </div>
 
           <div style={{ animation: "fadeUp 1s ease 0.2s both" }}>
@@ -240,12 +228,11 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* SHOWREEL */}
       <section id="showreel" style={{ padding: "120px 48px", position: "relative" }}>
         <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 60% 50% at 50% 50%, rgba(139,111,212,0.04) 0%, transparent 70%)" }} />
         <AnimSection><div style={{ maxWidth: 1100, margin: "0 auto", textAlign: "center", marginBottom: 60 }}>
           <span style={{ fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: "#C49A3C", display: "block", marginBottom: 16 }}>02 · Showreel</span>
-          <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 300, fontSize: "clamp(36px, 5vw, 60px)", letterSpacing: "-0.01em" }}>The Reel · 2024</h2>
+          <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 300, fontSize: "clamp(36px, 5vw, 60px)", letterSpacing: "-0.01em" }}>The Reel · 2026</h2>
         </div></AnimSection>
         <AnimSection delay={0.2}><div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <div style={{ position: "relative", borderRadius: 8, overflow: "hidden", border: "1px solid rgba(255,255,255,0.06)", boxShadow: "0 40px 100px rgba(0,0,0,0.6)" }}>
@@ -284,7 +271,6 @@ export default function Portfolio() {
         </div></AnimSection>
       </section>
 
-      {/* PROJECTS */}
       <section id="work" style={{ padding: "80px 48px 120px" }}>
         <AnimSection><div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 60, flexWrap: "wrap", gap: 12 }}>
           <div>
@@ -320,7 +306,6 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* EXPERIENCE */}
       <section id="experience" style={{ padding: "80px 48px 120px", position: "relative" }}>
         <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 40% 60% at 10% 50%, rgba(196,154,60,0.03) 0%, transparent 70%)" }} />
         <AnimSection><div style={{ maxWidth: 960, margin: "0 auto", marginBottom: 60 }}>
@@ -350,7 +335,6 @@ export default function Portfolio() {
         </div>
       </section>
 
-      {/* SKILLS */}
       <section id="skills" style={{ padding: "80px 48px 120px" }}>
         <AnimSection><div style={{ maxWidth: 1100, margin: "0 auto", marginBottom: 60 }}>
           <span style={{ fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: "#C49A3C", display: "block", marginBottom: 16 }}>05 · Expertise</span>
@@ -366,13 +350,16 @@ export default function Portfolio() {
         </div></AnimSection>
       </section>
 
-      {/* MY INDI FILMS */}
       <section id="indi films" style={{ padding: "80px 48px 120px", position: "relative" }}>
         <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 60% 50% at 50% 30%, rgba(139,111,212,0.04) 0%, transparent 70%)" }} />
         <AnimSection><div style={{ maxWidth: 1100, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 60, flexWrap: "wrap", gap: 12 }}>
           <div>
             <span style={{ fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: "#C49A3C", display: "block", marginBottom: 16 }}>06 · Independent Cinema</span>
-            <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 300, fontSize: "clamp(32px, 4vw, 54px)", letterSpacing: "-0.01em" }}>My Indi Films</h2>
+            <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 300, fontSize: "clamp(32px, 4vw, 54px)", letterSpacing: "-0.01em", marginBottom: 12 }}>My Indi Films</h2>
+            <div style={{ display: "flex", alignItems: "center", gap: 12, marginTop: 8 }}>
+              <div style={{ width: 3, height: 22, borderRadius: 2, background: "#C49A3C", opacity: 0.7, flexShrink: 0 }} />
+              <p style={{ fontSize: 14, color: "rgba(232,228,220,0.45)", fontStyle: "italic", letterSpacing: "0.02em" }}>Independent films written &amp; directed by Josukutty Francis</p>
+            </div>
           </div>
           <div style={{ fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(232,228,220,0.2)" }}>Director · Writer · VFX Supervisor</div>
         </div></AnimSection>
@@ -417,7 +404,6 @@ export default function Portfolio() {
         <AnimSection delay={0.3}><p style={{ maxWidth: 1100, margin: "40px auto 0", textAlign: "center", fontSize: 13, color: "rgba(232,228,220,0.2)", letterSpacing: "0.06em", fontStyle: "italic" }}>Films and trailers will be posted here as projects develop · Stay tuned</p></AnimSection>
       </section>
 
-      {/* CONTACT */}
       <section id="contact" style={{ padding: "80px 48px 100px", position: "relative" }}>
         <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 60% 60% at 50% 80%, rgba(196,154,60,0.05) 0%, transparent 70%)" }} />
         <AnimSection><div style={{ maxWidth: 700, margin: "0 auto", textAlign: "center", position: "relative", zIndex: 2 }}>
@@ -441,13 +427,12 @@ export default function Portfolio() {
         </div></AnimSection>
       </section>
 
-      {/* Footer */}
       <footer style={{ borderTop: "1px solid rgba(255,255,255,0.04)", padding: "24px 48px", display: "flex", justifyContent: "space-between", alignItems: "center", flexWrap: "wrap", gap: 12 }}>
         <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
           <div style={{ width: 4, height: 4, borderRadius: "50%", background: "#C49A3C" }} />
           <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 13, color: "rgba(232,228,220,0.3)", letterSpacing: "0.08em" }}>JOSUKUTTY FRANCIS VFX</span>
         </div>
-        <span style={{ fontSize: 11, color: "rgba(232,228,220,0.2)", letterSpacing: "0.08em" }}>© 2025 · VFX Lighting Lead · Available Worldwide</span>
+        <span style={{ fontSize: 11, color: "rgba(232,228,220,0.2)", letterSpacing: "0.08em" }}>© 2026 · VFX Lighting Lead · Available Worldwide</span>
         <div className="footer-links" style={{ display: "flex", gap: 24 }}>
           {NAV_LINKS.map(l => <span key={l} style={{ fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(232,228,220,0.2)", cursor: "pointer" }} onClick={() => scrollTo(l)}>{l}</span>)}
         </div>
