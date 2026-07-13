@@ -61,7 +61,7 @@ function AnimSection({ children, delay = 0 }) {
   const ref = useRef(null);
   const visible = useInView(ref);
   return (
-    <div ref={ref} style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(36px)", transition: `opacity 0.9s ease ${delay}s, transform 0.9s ease ${delay}s` }}>
+    <div ref={ref} style={{ opacity: visible ? 1 : 0, transform: visible ? "translateY(0)" : "translateY(36px)", transition: `opacity 0.9s ease ${delay}s, transform 0.9s ease ${delay}s`, position: "relative", zIndex: 2 }}>
       {children}
     </div>
   );
@@ -245,14 +245,14 @@ export default function Portfolio() {
       <section id="showreel" style={{ padding: "120px 48px", position: "relative" }}>
         <FloatingParticles count={20} />
         <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 60% 50% at 50% 50%, rgba(139,111,212,0.04) 0%, transparent 70%)" }} />
-        <AnimSection><div style={{ maxWidth: 1100, margin: "0 auto", textAlign: "center", marginBottom: 60 }}>
+        <AnimSection><div style={{ maxWidth: 1100, margin: "0 auto", textAlign: "center", marginBottom: 60, position: "relative", zIndex: 2 }}>
           <span style={{ fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: "#C49A3C", display: "block", marginBottom: 16 }}>02 · Showreel</span>
           <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 300, fontSize: "clamp(36px, 5vw, 60px)", letterSpacing: "-0.01em" }}>The Reel · 2026</h2>
         </div></AnimSection>
-        <AnimSection delay={0.2}><div style={{ maxWidth: 1100, margin: "0 auto" }}>
-          <div style={{ position: "relative", borderRadius: 8, overflow: "hidden", border: "1px solid rgba(255,255,255,0.06)", boxShadow: "0 40px 100px rgba(0,0,0,0.6)" }}>
+        <AnimSection delay={0.2}><div style={{ maxWidth: 1100, margin: "0 auto", position: "relative", zIndex: 2 }}>
+          <div style={{ position: "relative", borderRadius: 8, overflow: "hidden", border: "1px solid rgba(255,255,255,0.06)", boxShadow: "0 40px 100px rgba(0,0,0,0.6)", zIndex: 3 }}>
             {!showreel ? (
-              <div style={{ position: "relative", background: "#0a0a0e", aspectRatio: "16/9", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer" }} onClick={() => setShowreel(true)}>
+              <div style={{ position: "relative", background: "#0a0a0e", aspectRatio: "16/9", display: "flex", alignItems: "center", justifyContent: "center", cursor: "pointer", zIndex: 3 }} onClick={() => setShowreel(true)}>
                 <div style={{ position: "absolute", inset: 0, display: "grid", gridTemplateColumns: "repeat(3, 1fr)", opacity: 0.15 }}>
                   {["#C49A3C", "#8B6FD4", "#3CA4C4", "#D46F3C", "#C43C3C", "#3CC48B"].map((c, i) => (
                     <div key={i} style={{ background: `radial-gradient(ellipse at ${i % 2 === 0 ? "30%" : "70%"} 50%, ${c}33, transparent 70%)` }} />
@@ -270,7 +270,7 @@ export default function Portfolio() {
                 </div>
               </div>
             ) : (
-              <div style={{ position: "relative", paddingBottom: "56.25%", height: 0 }}>
+              <div style={{ position: "relative", paddingBottom: "56.25%", height: 0, zIndex: 3 }}>
                 <iframe src="https://player.vimeo.com/video/1188775255?autoplay=1" style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", border: "none" }} allow="autoplay; fullscreen; picture-in-picture" title="Josukutty Francis VFX Showreel" />
               </div>
             )}
@@ -478,7 +478,7 @@ function FloatingParticles({ count = 20 }) {
     particles.push({ i, color, size, left, top, duration, delay, floatType });
   }
   return (
-    <div style={{ position: "absolute", inset: 0, pointerEvents: "none", overflow: "hidden", zIndex: 1 }}>
+    <div style={{ position: "absolute", inset: 0, pointerEvents: "none", overflow: "hidden", zIndex: 0 }}>
       {particles.map(p => (
         <div key={p.i} style={{
           position: "absolute",
