@@ -128,12 +128,6 @@ export default function Portfolio() {
         @keyframes pulseGreen { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(1.4)} }
         @keyframes pulseGold { 0%,100%{opacity:1} 50%{opacity:0.4} }
         @keyframes filmPulse { 0%,100%{opacity:0.4} 50%{opacity:1} }
-        @keyframes twinkle0 { 0%,100%{opacity:0.1;transform:scale(0.8)} 50%{opacity:1;transform:scale(1.3)} }
-        @keyframes twinkle1 { 0%,100%{opacity:0.7} 33%{opacity:0.05} 66%{opacity:0.9;transform:scale(1.4)} }
-        @keyframes twinkle2 { 0%,100%{opacity:0.9} 50%{opacity:0.05;transform:scale(0.5)} }
-        @keyframes twinkle3 { 0%,25%{opacity:0.15} 50%{opacity:1;transform:scale(1.5)} 75%{opacity:0.2} }
-        @keyframes twinkle4 { 0%,100%{opacity:0.05} 40%{opacity:1;transform:scale(1.6)} 80%{opacity:0.25} }
-        .star-field { position:absolute; inset:0; pointer-events:none; overflow:hidden; z-index:1; }
         .mobile-menu-overlay { display: none; }
         @media (max-width: 768px) {
           .desktop-nav { display: none !important; }
@@ -194,8 +188,8 @@ export default function Portfolio() {
           <div style={{ position: "absolute", inset: 0, backgroundImage: "linear-gradient(rgba(255,255,255,0.015) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.015) 1px, transparent 1px)", backgroundSize: "80px 80px" }} />
           <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 100% 100% at 50% 50%, transparent 40%, rgba(5,5,7,0.8) 100%)" }} />
         </div>
-        {[...Array(50)].map((_, i) => (
-          <div key={i} style={{ position: "absolute", width: i % 2 === 0 ? 2 : 1, height: i % 2 === 0 ? 2 : 1, borderRadius: "50%", background: i % 5 === 0 ? "#C49A3C" : i % 5 === 1 ? "#8B6FD4" : i % 5 === 2 ? "#3CA4C4" : i % 5 === 3 ? "#ffffff" : "#E8C878", opacity: 0.3 + (i * 0.014), left: `${(i * 7.3 + 3) % 96}%`, top: `${(i * 11.7 + 5) % 85}%`, boxShadow: `0 0 ${3 + (i % 6)}px currentColor`, animation: `twinkle${i % 5} ${1.5 + (i % 7) * 0.8}s ease-in-out ${(i % 5) * 0.4}s infinite` }} />
+        {[...Array(12)].map((_, i) => (
+          <div key={i} style={{ position: "absolute", width: i % 2 === 0 ? 2 : 1, height: i % 2 === 0 ? 2 : 1, borderRadius: "50%", background: i % 3 === 0 ? "#C49A3C" : i % 3 === 1 ? "#8B6FD4" : "#3CA4C4", opacity: 0.4 + (i * 0.04), left: `${8 + i * 8}%`, top: `${20 + (i * 13) % 60}%`, boxShadow: `0 0 ${4 + i}px currentColor`, animation: `float${i % 3} ${4 + i * 0.5}s ease-in-out infinite` }} />
         ))}
 
         <div style={{ textAlign: "center", position: "relative", zIndex: 2, maxWidth: 900, padding: "0 24px" }}>
@@ -249,11 +243,11 @@ export default function Portfolio() {
 
       {/* SHOWREEL */}
       <section id="showreel" style={{ padding: "120px 48px", position: "relative" }}>
-        <StarField />
+        <FloatingParticles count={20} />
         <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 60% 50% at 50% 50%, rgba(139,111,212,0.04) 0%, transparent 70%)" }} />
         <AnimSection><div style={{ maxWidth: 1100, margin: "0 auto", textAlign: "center", marginBottom: 60 }}>
           <span style={{ fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: "#C49A3C", display: "block", marginBottom: 16 }}>02 · Showreel</span>
-          <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 300, fontSize: "clamp(36px, 5vw, 60px)", letterSpacing: "-0.01em" }}>The Reel · 2024</h2>
+          <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 300, fontSize: "clamp(36px, 5vw, 60px)", letterSpacing: "-0.01em" }}>The Reel · 2026</h2>
         </div></AnimSection>
         <AnimSection delay={0.2}><div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <div style={{ position: "relative", borderRadius: 8, overflow: "hidden", border: "1px solid rgba(255,255,255,0.06)", boxShadow: "0 40px 100px rgba(0,0,0,0.6)" }}>
@@ -294,7 +288,7 @@ export default function Portfolio() {
 
       {/* PROJECTS */}
       <section id="work" style={{ padding: "80px 48px 120px", position: "relative" }}>
-        <StarField />
+        <FloatingParticles count={20} />
         <AnimSection><div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 60, flexWrap: "wrap", gap: 12 }}>
           <div>
             <span style={{ fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: "#C49A3C", display: "block", marginBottom: 16 }}>03 · Featured Work</span>
@@ -331,7 +325,7 @@ export default function Portfolio() {
 
       {/* EXPERIENCE */}
       <section id="experience" style={{ padding: "80px 48px 120px", position: "relative" }}>
-        <StarField />
+        <FloatingParticles count={15} />
         <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 40% 60% at 10% 50%, rgba(196,154,60,0.03) 0%, transparent 70%)" }} />
         <AnimSection><div style={{ maxWidth: 960, margin: "0 auto", marginBottom: 60 }}>
           <span style={{ fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: "#C49A3C", display: "block", marginBottom: 16 }}>04 · Career</span>
@@ -362,7 +356,7 @@ export default function Portfolio() {
 
       {/* SKILLS */}
       <section id="skills" style={{ padding: "80px 48px 120px", position: "relative" }}>
-        <StarField />
+        <FloatingParticles count={15} />
         <AnimSection><div style={{ maxWidth: 1100, margin: "0 auto", marginBottom: 60 }}>
           <span style={{ fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: "#C49A3C", display: "block", marginBottom: 16 }}>05 · Expertise</span>
           <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 300, fontSize: "clamp(32px, 4vw, 54px)", letterSpacing: "-0.01em" }}>Technical Skills</h2>
@@ -379,7 +373,7 @@ export default function Portfolio() {
 
       {/* MY INDI FILMS */}
       <section id="indi films" style={{ padding: "80px 48px 120px", position: "relative" }}>
-        <StarField />
+        <FloatingParticles count={20} />
         <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 60% 50% at 50% 30%, rgba(139,111,212,0.04) 0%, transparent 70%)" }} />
         <AnimSection><div style={{ maxWidth: 1100, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 60, flexWrap: "wrap", gap: 12 }}>
           <div>
@@ -431,7 +425,7 @@ export default function Portfolio() {
 
       {/* CONTACT */}
       <section id="contact" style={{ padding: "80px 48px 100px", position: "relative" }}>
-        <StarField />
+        <FloatingParticles count={15} />
         <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 60% 60% at 50% 80%, rgba(196,154,60,0.05) 0%, transparent 70%)" }} />
         <AnimSection><div style={{ maxWidth: 700, margin: "0 auto", textAlign: "center", position: "relative", zIndex: 2 }}>
           <span style={{ fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: "#C49A3C", display: "block", marginBottom: 24 }}>07 · Contact</span>
@@ -460,7 +454,7 @@ export default function Portfolio() {
           <div style={{ width: 4, height: 4, borderRadius: "50%", background: "#C49A3C" }} />
           <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 13, color: "rgba(232,228,220,0.3)", letterSpacing: "0.08em" }}>JOSUKUTTY FRANCIS VFX</span>
         </div>
-        <span style={{ fontSize: 11, color: "rgba(232,228,220,0.2)", letterSpacing: "0.08em" }}>© 2025 · VFX Lighting Lead · Available Worldwide</span>
+        <span style={{ fontSize: 11, color: "rgba(232,228,220,0.2)", letterSpacing: "0.08em" }}>© 2026 · VFX Lighting Lead · Available Worldwide</span>
         <div className="footer-links" style={{ display: "flex", gap: 24 }}>
           {NAV_LINKS.map(l => <span key={l} style={{ fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(232,228,220,0.2)", cursor: "pointer" }} onClick={() => scrollTo(l)}>{l}</span>)}
         </div>
@@ -470,32 +464,33 @@ export default function Portfolio() {
 }
 
 
-function StarField() {
-  const stars = [];
-  const colors = ["#C49A3C", "#8B6FD4", "#3CA4C4", "#ffffff", "#ffffff", "#ffffff", "#ffffff", "#E8C878"];
-  for (let i = 0; i < 80; i++) {
-    const color = colors[Math.floor(Math.random() * colors.length)];
-    const size = Math.random() < 0.3 ? 2 : Math.random() < 0.6 ? 1.5 : 1;
-    const twinkle = Math.floor(Math.random() * 5);
-    const duration = (2 + Math.random() * 5).toFixed(1);
-    const delay = (Math.random() * 4).toFixed(1);
-    const left = (Math.random() * 100).toFixed(1);
-    const top = (Math.random() * 100).toFixed(1);
-    stars.push({ id: i, color, size, twinkle, duration, delay, left, top });
+function FloatingParticles({ count = 20 }) {
+  const particles = [];
+  const colors = ["#C49A3C", "#8B6FD4", "#3CA4C4", "#C49A3C", "#ffffff", "#ffffff"];
+  for (let i = 0; i < count; i++) {
+    const color = colors[i % colors.length];
+    const size = i % 3 === 0 ? 2 : 1;
+    const left = ((i * 13.7 + 5) % 92).toFixed(1);
+    const top = ((i * 17.3 + 8) % 88).toFixed(1);
+    const duration = (8 + (i % 7) * 3).toFixed(1);
+    const delay = ((i % 9) * 1.2).toFixed(1);
+    const floatType = i % 3;
+    particles.push({ i, color, size, left, top, duration, delay, floatType });
   }
   return (
-    <div className="star-field">
-      {stars.map(s => (
-        <div key={s.id} style={{
+    <div style={{ position: "absolute", inset: 0, pointerEvents: "none", overflow: "hidden", zIndex: 1 }}>
+      {particles.map(p => (
+        <div key={p.i} style={{
           position: "absolute",
-          left: s.left + "%",
-          top: s.top + "%",
-          width: s.size + "px",
-          height: s.size + "px",
+          left: p.left + "%",
+          top: p.top + "%",
+          width: p.size + "px",
+          height: p.size + "px",
           borderRadius: "50%",
-          background: s.color,
-          boxShadow: `0 0 ${s.size * 3}px ${s.color}`,
-          animation: `twinkle${s.twinkle} ${s.duration}s ease-in-out ${s.delay}s infinite`,
+          background: p.color,
+          boxShadow: `0 0 ${p.size * 4}px ${p.color}`,
+          opacity: 0.45,
+          animation: `float${p.floatType} ${p.duration}s ease-in-out ${p.delay}s infinite`,
         }} />
       ))}
     </div>
@@ -513,7 +508,7 @@ function SkillCard({ skill, index }) {
       onMouseLeave={e => e.currentTarget.style.borderColor = "rgba(255,255,255,0.04)"}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 20 }}>
         <span style={{ fontSize: 13, fontWeight: 400, color: "rgba(232,228,220,0.75)" }}>{skill.name}</span>
-        <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 20, fontWeight: 300, color }}>{skill.level}%</span>
+        
       </div>
       <div className="skill-bar" style={{ marginBottom: 20 }}>
         <div className="skill-fill" style={{ width: visible ? `${skill.level}%` : "0%", background: `linear-gradient(90deg, ${color}60, ${color})` }} />
