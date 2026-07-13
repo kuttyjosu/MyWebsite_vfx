@@ -119,9 +119,9 @@ export default function Portfolio() {
         .nav-link:hover { color: rgba(232,228,220,0.9); }
         .nav-link:hover::after { width: 100%; }
         .cursor-glow { pointer-events: none; position: fixed; z-index: 9999; width: 300px; height: 300px; border-radius: 50%; background: radial-gradient(circle, rgba(196,154,60,0.04) 0%, transparent 70%); transform: translate(-50%, -50%); transition: left 0.15s, top 0.15s; }
-        @keyframes float0 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
-        @keyframes float1 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
-        @keyframes float2 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-16px)} }
+        @keyframes float0 { 0%,100%{transform:translateY(0) translateX(0)} 33%{transform:translateY(-18px) translateX(6px)} 66%{transform:translateY(-8px) translateX(-4px)} }
+        @keyframes float1 { 0%,100%{transform:translateY(0) translateX(0)} 33%{transform:translateY(-14px) translateX(-8px)} 66%{transform:translateY(-6px) translateX(5px)} }
+        @keyframes float2 { 0%,100%{transform:translateY(0) translateX(0)} 33%{transform:translateY(-22px) translateX(4px)} 66%{transform:translateY(-10px) translateX(-6px)} }
         @keyframes fadeUp { from{opacity:0;transform:translateY(30px)} to{opacity:1;transform:translateY(0)} }
         @keyframes fadeIn { from{opacity:0} to{opacity:1} }
         @keyframes scanline { 0%{transform:translateX(-100%)} 100%{transform:translateX(200%)} }
@@ -243,7 +243,7 @@ export default function Portfolio() {
 
       {/* SHOWREEL */}
       <section id="showreel" style={{ padding: "120px 48px", position: "relative" }}>
-        <FloatingParticles count={20} />
+        <FloatingParticles count={30} />
         <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 60% 50% at 50% 50%, rgba(139,111,212,0.04) 0%, transparent 70%)" }} />
         <AnimSection><div style={{ maxWidth: 1100, margin: "0 auto", textAlign: "center", marginBottom: 60, position: "relative", zIndex: 2 }}>
           <span style={{ fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: "#C49A3C", display: "block", marginBottom: 16 }}>02 · Showreel</span>
@@ -288,7 +288,7 @@ export default function Portfolio() {
 
       {/* PROJECTS */}
       <section id="work" style={{ padding: "80px 48px 120px", position: "relative" }}>
-        <FloatingParticles count={20} />
+        <FloatingParticles count={30} />
         <AnimSection><div style={{ maxWidth: 1200, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 60, flexWrap: "wrap", gap: 12 }}>
           <div>
             <span style={{ fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: "#C49A3C", display: "block", marginBottom: 16 }}>03 · Featured Work</span>
@@ -325,7 +325,7 @@ export default function Portfolio() {
 
       {/* EXPERIENCE */}
       <section id="experience" style={{ padding: "80px 48px 120px", position: "relative" }}>
-        <FloatingParticles count={15} />
+        <FloatingParticles count={30} />
         <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 40% 60% at 10% 50%, rgba(196,154,60,0.03) 0%, transparent 70%)" }} />
         <AnimSection><div style={{ maxWidth: 960, margin: "0 auto", marginBottom: 60 }}>
           <span style={{ fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: "#C49A3C", display: "block", marginBottom: 16 }}>04 · Career</span>
@@ -356,7 +356,7 @@ export default function Portfolio() {
 
       {/* SKILLS */}
       <section id="skills" style={{ padding: "80px 48px 120px", position: "relative" }}>
-        <FloatingParticles count={15} />
+        <FloatingParticles count={30} />
         <AnimSection><div style={{ maxWidth: 1100, margin: "0 auto", marginBottom: 60 }}>
           <span style={{ fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: "#C49A3C", display: "block", marginBottom: 16 }}>05 · Expertise</span>
           <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 300, fontSize: "clamp(32px, 4vw, 54px)", letterSpacing: "-0.01em" }}>Technical Skills</h2>
@@ -373,7 +373,7 @@ export default function Portfolio() {
 
       {/* MY INDI FILMS */}
       <section id="indi films" style={{ padding: "80px 48px 120px", position: "relative" }}>
-        <FloatingParticles count={20} />
+        <FloatingParticles count={30} />
         <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 60% 50% at 50% 30%, rgba(139,111,212,0.04) 0%, transparent 70%)" }} />
         <AnimSection><div style={{ maxWidth: 1100, margin: "0 auto", display: "flex", justifyContent: "space-between", alignItems: "flex-end", marginBottom: 60, flexWrap: "wrap", gap: 12 }}>
           <div>
@@ -425,7 +425,7 @@ export default function Portfolio() {
 
       {/* CONTACT */}
       <section id="contact" style={{ padding: "80px 48px 100px", position: "relative" }}>
-        <FloatingParticles count={15} />
+        <FloatingParticles count={30} />
         <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 60% 60% at 50% 80%, rgba(196,154,60,0.05) 0%, transparent 70%)" }} />
         <AnimSection><div style={{ maxWidth: 700, margin: "0 auto", textAlign: "center", position: "relative", zIndex: 2 }}>
           <span style={{ fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: "#C49A3C", display: "block", marginBottom: 24 }}>07 · Contact</span>
@@ -464,18 +464,20 @@ export default function Portfolio() {
 }
 
 
-function FloatingParticles({ count = 20 }) {
+function FloatingParticles({ count = 30 }) {
   const particles = [];
-  const colors = ["#C49A3C", "#8B6FD4", "#3CA4C4", "#C49A3C", "#ffffff", "#ffffff"];
+  const colors = ["#C49A3C", "#8B6FD4", "#3CA4C4", "#C49A3C", "#ffffff", "#ffffff", "#E8C878", "#ffffff"];
   for (let i = 0; i < count; i++) {
     const color = colors[i % colors.length];
-    const size = i % 3 === 0 ? 2 : 1;
+    const size = i % 3 === 0 ? 2 : i % 5 === 0 ? 1.5 : 1;
     const left = ((i * 13.7 + 5) % 92).toFixed(1);
     const top = ((i * 17.3 + 8) % 88).toFixed(1);
-    const duration = (8 + (i % 7) * 3).toFixed(1);
-    const delay = ((i % 9) * 1.2).toFixed(1);
+    const duration = (4 + (i % 5) * 1.5).toFixed(1);
+    const delay = ((i % 7) * 0.8).toFixed(1);
     const floatType = i % 3;
-    particles.push({ i, color, size, left, top, duration, delay, floatType });
+    const glowSize = size === 2 ? size * 6 : size * 4;
+    const opacity = 0.4 + (i * 0.018);
+    particles.push({ i, color, size, left, top, duration, delay, floatType, glowSize, opacity });
   }
   return (
     <div style={{ position: "absolute", inset: 0, pointerEvents: "none", overflow: "hidden", zIndex: 0 }}>
@@ -488,8 +490,8 @@ function FloatingParticles({ count = 20 }) {
           height: p.size + "px",
           borderRadius: "50%",
           background: p.color,
-          boxShadow: `0 0 ${p.size * 4}px ${p.color}`,
-          opacity: 0.45,
+          boxShadow: `0 0 ${p.glowSize}px ${p.color}`,
+          opacity: Math.min(p.opacity, 0.85),
           animation: `float${p.floatType} ${p.duration}s ease-in-out ${p.delay}s infinite`,
         }} />
       ))}
