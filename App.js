@@ -247,7 +247,7 @@ export default function Portfolio() {
         <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 60% 50% at 50% 50%, rgba(139,111,212,0.04) 0%, transparent 70%)" }} />
         <AnimSection><div style={{ maxWidth: 1100, margin: "0 auto", textAlign: "center", marginBottom: 60 }}>
           <span style={{ fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: "#C49A3C", display: "block", marginBottom: 16 }}>02 · Showreel</span>
-          <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 300, fontSize: "clamp(36px, 5vw, 60px)", letterSpacing: "-0.01em" }}>The Reel · 2024</h2>
+          <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 300, fontSize: "clamp(36px, 5vw, 60px)", letterSpacing: "-0.01em" }}>The Reel · 2026</h2>
         </div></AnimSection>
         <AnimSection delay={0.2}><div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <div style={{ position: "relative", borderRadius: 8, overflow: "hidden", border: "1px solid rgba(255,255,255,0.06)", boxShadow: "0 40px 100px rgba(0,0,0,0.6)" }}>
@@ -454,7 +454,7 @@ export default function Portfolio() {
           <div style={{ width: 4, height: 4, borderRadius: "50%", background: "#C49A3C" }} />
           <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 13, color: "rgba(232,228,220,0.3)", letterSpacing: "0.08em" }}>JOSUKUTTY FRANCIS VFX</span>
         </div>
-        <span style={{ fontSize: 11, color: "rgba(232,228,220,0.2)", letterSpacing: "0.08em" }}>© 2025 · VFX Lighting Lead · Available Worldwide</span>
+        <span style={{ fontSize: 11, color: "rgba(232,228,220,0.2)", letterSpacing: "0.08em" }}>© 2026 · VFX Lighting Lead · Available Worldwide</span>
         <div className="footer-links" style={{ display: "flex", gap: 24 }}>
           {NAV_LINKS.map(l => <span key={l} style={{ fontSize: 10, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(232,228,220,0.2)", cursor: "pointer" }} onClick={() => scrollTo(l)}>{l}</span>)}
         </div>
@@ -464,7 +464,7 @@ export default function Portfolio() {
 }
 
 
-function FloatingParticles({ count = 25 }) {
+function FloatingParticles({ count = 20 }) {
   const particles = [];
   const colors = ["#C49A3C", "#8B6FD4", "#3CA4C4", "#C49A3C", "#ffffff", "#ffffff"];
   for (let i = 0; i < count; i++) {
@@ -489,7 +489,7 @@ function FloatingParticles({ count = 25 }) {
           borderRadius: "50%",
           background: p.color,
           boxShadow: `0 0 ${p.size * 4}px ${p.color}`,
-          opacity: 0.5,
+          opacity: 0.45,
           animation: `float${p.floatType} ${p.duration}s ease-in-out ${p.delay}s infinite`,
         }} />
       ))}
@@ -508,7 +508,7 @@ function SkillCard({ skill, index }) {
       onMouseLeave={e => e.currentTarget.style.borderColor = "rgba(255,255,255,0.04)"}>
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: 20 }}>
         <span style={{ fontSize: 13, fontWeight: 400, color: "rgba(232,228,220,0.75)" }}>{skill.name}</span>
-        <span style={{ fontFamily: "'Cormorant Garamond', serif", fontSize: 20, fontWeight: 300, color }}>{skill.level}%</span>
+        
       </div>
       <div className="skill-bar" style={{ marginBottom: 20 }}>
         <div className="skill-fill" style={{ width: visible ? `${skill.level}%` : "0%", background: `linear-gradient(90deg, ${color}60, ${color})` }} />
