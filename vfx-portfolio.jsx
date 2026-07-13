@@ -269,7 +269,7 @@ export default function Portfolio() {
         <AnimSection style={{ maxWidth: 1100, margin: "0 auto" }}>
           <div style={{ textAlign: "center", marginBottom: 60 }}>
             <span style={{ fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: "#C49A3C", display: "block", marginBottom: 16 }}>02 · Showreel</span>
-            <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 300, fontSize: "clamp(36px, 5vw, 60px)", letterSpacing: "-0.01em" }}>The Reel · 2024</h2>
+            <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 300, fontSize: "clamp(36px, 5vw, 60px)", letterSpacing: "-0.01em" }}>The Reel · 2026</h2>
           </div>
         </AnimSection>
 
