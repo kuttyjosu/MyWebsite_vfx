@@ -1,5 +1,4 @@
-Update vfx-portfolio.jsximport { useState, useEffect, useRef } from "react";
-
+import { useState, useEffect, useRef } from "react";
 const NAV_LINKS = ["Showreel", "Work", "Experience", "Skills", "Indi Films", "Contact"];
 
 const PROJECTS = [
