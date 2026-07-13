@@ -245,7 +245,7 @@ export default function Portfolio() {
         <div style={{ position: "absolute", inset: 0, background: "radial-gradient(ellipse 60% 50% at 50% 50%, rgba(139,111,212,0.04) 0%, transparent 70%)" }} />
         <AnimSection><div style={{ maxWidth: 1100, margin: "0 auto", textAlign: "center", marginBottom: 60 }}>
           <span style={{ fontSize: 10, letterSpacing: "0.2em", textTransform: "uppercase", color: "#C49A3C", display: "block", marginBottom: 16 }}>02 · Showreel</span>
-          <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 300, fontSize: "clamp(36px, 5vw, 60px)", letterSpacing: "-0.01em" }}>The Reel · 2024</h2>
+          <h2 style={{ fontFamily: "'Cormorant Garamond', serif", fontWeight: 300, fontSize: "clamp(36px, 5vw, 60px)", letterSpacing: "-0.01em" }}>The Reel · 2026</h2>
         </div></AnimSection>
         <AnimSection delay={0.2}><div style={{ maxWidth: 1100, margin: "0 auto" }}>
           <div style={{ position: "relative", borderRadius: 8, overflow: "hidden", border: "1px solid rgba(255,255,255,0.06)", boxShadow: "0 40px 100px rgba(0,0,0,0.6)" }}>
